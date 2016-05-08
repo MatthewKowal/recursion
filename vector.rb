@@ -1,20 +1,22 @@
-class Array
-	def sum #unfortunately this deletes all elements of self
+class Array # I added a method 'sum' that returns the sum of the elements in an array
+
+ 	def sum #recursively sums the elements of an array 
+	        #unfortunately this deletes all elements of self
 		result = self.shift
 		self.length != 0 ? result += self.sum : result
 	end
 end
 
 class Vector #a vector has a magnitude and direction (in radians),
-				 #from that we can compute the x and y components
+	     #from that we can compute the x and y components
 
 	attr_accessor :magnitude, :radians, :x, :y
 
 	def initialize(mag=0.0, rad=0.0)
 		self.magnitude = mag
 		self.radians = rad
-		self.x = mag*Math.cos(rad)
-		self.y = mag*Math.sin(rad)
+		self.x = mag*Math.cos(rad) #calculates x component
+		self.y = mag*Math.sin(rad) #calculates y component
 	end
 
 
